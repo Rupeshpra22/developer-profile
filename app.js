@@ -6,11 +6,10 @@ const developer = require('./developer');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
-if (process.env.NODE_ENV === "production") {
-    app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'build', 'index.html'))
-    })
-}
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
 let allowAccessOrigin = (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "*");
