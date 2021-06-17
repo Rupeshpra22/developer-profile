@@ -1,0 +1,153 @@
+.banner{
+    display: flex;
+    align-items: center;
+    background-color: #2F2E41;
+    padding: 0px 40px;
+    justify-content: space-between;
+}
+
+.banner-text{
+    color: white;
+    font-size: 72px;
+    text-align: center;
+    padding: 0 100px 0px 60px;
+}
+
+img#banner{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.explore-container{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-text{
+    font-size: 56px;
+    color: #3f3d56;
+    text-align: center;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.search-input-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #d0cde1;
+    width: 60%;
+    border-radius: 25px;
+}
+
+input#search-dev{
+    height: 80px;
+    width: 100%;
+    font-size: 24px;
+    outline: 0;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.search-icon{
+    font-size: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.dev-container{
+    padding: 100px 0px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img#account{
+    color: #2F2E41;
+    font-size: 20px;
+    height: 100px;
+}
+
+.account-wrapper{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    padding: 20px;
+}
+
+.account-name{
+    font-size: 36px;
+    color: #9f8e63;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.redirect{
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: skyblue;
+    cursor: pointer;
+}
+
+a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.not-found-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-text{
+    padding: 50px 0px;
+    font-size: 36px;
+    color: #2F2E41;
+}
+
+.not-found-wrapper button{
+    font-size: 36px;
+    background-color: #7c639f;
+    padding: 15px 72px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    margin-bottom: 50px
+}
+
+.no-developers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 36px;
+    color:  #2F2E41;
+}
+
+@media screen and (max-width: 960px){
+    .banner{
+        flex-direction: column-reverse;
+    }
+
+    .banner-text{
+        font-size: 50px;
+    }
+}

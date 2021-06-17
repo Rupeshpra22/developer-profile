@@ -1,11 +1,23 @@
 const express = require("express");
 const app = express();
-const port = process.env.port || 3000
+const port = process.env.port || 3001;
+const developer = require('./developer');
 
-app.get('/', (req,res)=>{
-    res.send("Developer profile");
+app.use(express.json());
+
+let allowAccessOrigin = (req,res,next)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    res.header('Acces-Contorl-Allow-Methods','Content-Type','Authorization')
+    next();
+}
+app.use(allowAccessOrigin)
+
+app.use('/api/developers', developer);
+
+app.get("/", (req, res) => {
+    res.send("Developer profile")
 })
-
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server is listening at port ${port}`)
 })
