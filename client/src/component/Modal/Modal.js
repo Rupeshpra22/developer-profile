@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 import './Modal.css'
 
 export class Modal extends Component {
-    // state = {
-    //     developerInfo = {
-    //         github_id: "",
-    //         linkedin_id: "",
-    //         codechef_id: "",
-    //         hackerrank_id: "",
-    //         twitter_id: "",
-    //         medium_id: ""
-    //     }
-    // }
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +10,6 @@ export class Modal extends Component {
             error: false
         };
     }
-
 
     render() {
         const onInputBlur = (event) => {
@@ -35,7 +24,6 @@ export class Modal extends Component {
         }
 
         const submitForm = (event) => {
-            console.log(this.state.devProfileData)
             event.preventDefault();
            
             if (this.state.devProfileData?.github_id !== "" && this.state.devProfileData?.github_id !== undefined) {
@@ -58,7 +46,6 @@ export class Modal extends Component {
             }
         }
 
-        console.log("Modal", this.state)
         const { isModalOpen, toggleModal } = this.props
         return (
             <>

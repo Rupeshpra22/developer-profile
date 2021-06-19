@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './Home.css'
 import banner from "../../assets/homepage_banner.png"
-import account from "../../assets/account_circle.svg"
 import { Link } from 'react-router-dom'
 import Footer from '../Footer/Footer'
 import Modal from '../Modal/Modal'
@@ -37,7 +36,6 @@ class Home extends Component {
         }
 
         const openModal = () => {
-            // this.props.changeBackground();
             this.setState({ isModalOpen: !this.state.isModalOpen })
         }
 
@@ -45,7 +43,6 @@ class Home extends Component {
             <>
                 <Modal
                     toggleModal={() => openModal()}
-                    //  overlay={this.props.changeBackground}
                     devDataUpdate={() => this.updateDeveloperData()}
                     isModalOpen={this.state.isModalOpen} />
                 {this.state.isModalOpen && <Overlay />}
@@ -72,7 +69,7 @@ class Home extends Component {
                                 return (
                                     <div className="account-wrapper" key={data.id}>
                                         <Link to={'/developers/' + data.id}>
-                                            <img src={account} alt="account" id="account" />
+                                            <img src={data.avatar_url} alt="account" id="account" height="100px" width="100px"/>
                                             <div className="account-name">{data.login}</div>
                                             <i className='fa fa-external-link redirect'></i>
                                         </Link>

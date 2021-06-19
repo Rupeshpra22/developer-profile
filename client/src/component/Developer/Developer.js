@@ -42,7 +42,6 @@ class Developer extends Component {
     }
 
     render() {
-        console.log(this.state)
         const Month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         return (
             <div>

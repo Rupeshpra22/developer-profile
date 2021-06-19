@@ -27,6 +27,7 @@ section{
     width: 400px;
     height: 400px;
     border-radius: 190px;
+    box-shadow: 1px 5px 8px 2px rgb(38 38 38 / 20%)
 }
 
 .left-section{

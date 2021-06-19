@@ -78,6 +78,8 @@ img#account{
     color: #2F2E41;
     font-size: 20px;
     height: 100px;
+    border-radius: 20px;
+    box-shadow: 1px 5px 8px 2px rgb(38 38 38 / 20%)
 }
 
 .account-wrapper{
