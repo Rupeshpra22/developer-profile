@@ -51,7 +51,6 @@ section{
 }
 
 .developer-name, .developer-bio{
-    width: fit-content;
     padding: 5px;
 }
 
@@ -68,10 +67,10 @@ section{
 
 .other-info-wrapper{
     display: flex;
-    width: fit-content;
     align-items: center;
     justify-content: flex-start;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .other-info{
@@ -101,16 +100,19 @@ section{
     justify-content: center;
     align-items: center;
     color: #2F2E41;
+    text-align: center;
 }
 .repo-name-wrapper{
     display: flex;
-    margin-bottom: 15px;
+    margin: 15px 0px;
 }
 
 .repo-name{
     margin-right: 5px;
-    color: #0768FA  
+    color: #0768FA;
+    word-break: break-all;
 }
+
 .repo-name-wrapper a{
     color: black;
     width: fit-content;
@@ -122,7 +124,6 @@ section{
     display: flex;
     flex-direction: column;
     margin: 0px 72px;
-    padding: 20px;
 }
 
 .repo-wrapper:nth-last-child(1){
@@ -132,3 +133,55 @@ section{
     color: gray
 }
 
+.repo-description{
+    margin-bottom: 30px
+}
+ main > hr{
+     margin-left : 5%
+ }
+
+@media screen and (max-width: 1200px){
+
+    section{
+        padding: 50px
+    }
+    
+    .left-section{
+        width: 30%;
+    }
+    .right-section{
+        width: 70%;
+    }
+
+    .avatar img{
+        width: 280px;
+        left: 200;
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 1060px){
+    section{
+        padding: 50px;
+        flex-direction: column;
+    }
+
+    .left-section, .right-section{
+        width: 100%;
+        text-align: center;
+    }
+
+    .other-info-wrapper{
+        justify-content: center;
+    }
+
+    .social-media-links{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .repo-wrapper{
+        margin: 0 30px
+    }
+}

@@ -37,7 +37,6 @@ img#banner{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
 }
 
 .search-input-field{
@@ -48,6 +47,7 @@ img#banner{
     background-color: #d0cde1;
     width: 60%;
     border-radius: 25px;
+    margin-top:50px
 }
 
 input#search-dev{
@@ -66,12 +66,12 @@ input#search-dev{
 }
 
 .dev-container{
-    padding: 100px 0px;
-    width: 80%;
+    padding: 100px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 img#account{
@@ -92,6 +92,7 @@ img#account{
     color: #9f8e63;
     margin-left: 15px;
     cursor: pointer;
+    word-break: break-all;
 }
 
 .redirect{
@@ -114,6 +115,8 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
 .not-found-text{
@@ -149,5 +152,32 @@ a{
 
     .banner-text{
         font-size: 50px;
+        padding: 69px
+    }
+
+    .search-input-field{
+        width: 85%
+    }
+
+    .account-wrapper{
+        width: 70%
+    }
+    .dev-container{
+        width: 100%;
+        justify-content: center;
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .account-wrapper{
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 500px){
+    .not-found-wrapper button{
+        font-size: 24px;
+        padding: 15px 60px;
     }
 }

@@ -155,7 +155,7 @@ class Developer extends Component {
                     this.state.repos.length > 0 ?
                         <main>
                             <div className="main-header">Github Repositories</div>
-                            <hr width="95%" />
+                            <hr width="85%" />
                             {
                                 this.state.repos.map(repo => {
                                     return (
@@ -169,8 +169,9 @@ class Developer extends Component {
                                                 <div className="repo-date">Updated on {new Date(repo.updated_at).getDate() + " " + Month[new Date(repo.updated_at).getMonth()] + " " +  new Date(repo.updated_at).getFullYear()}</div>
                                             </div>
                                             <div className="repo-description">{repo.description}</div>
+                                            <hr width="95%" />
                                         </div>
-                                        <hr width="95%" />
+                                        
                                         </>
                                     )
                                 })

@@ -58,9 +58,9 @@ class Home extends Component {
                     <div className="explore-text">Explore developer profiles</div>
                 </div>
 
-                <hr width="95%" />
 
                 <div className="search-container">
+                    <hr width="95%" />
                     <div className="search-input-field">
                         <input type="text" placeholder="Search for username" id="search-dev" onChange={(e) => handleChange(e)} />
                         <i className="fa fa-search search-icon"></i>

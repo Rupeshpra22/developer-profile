@@ -53,6 +53,7 @@ export class Modal extends Component {
                         this.props.devDataUpdate();
                     });
             } else {
+                document.querySelector(".modal").scrollTo(0,0)
                 this.setState({ error: true })
             }
         }
@@ -65,7 +66,8 @@ export class Modal extends Component {
                     isModalOpen ?
                         <div className="modal">
                             <div className="modal-header">
-                                Add developer profile
+                                <div className="modal-header-name">Add developer profile</div>
+                                <div class="modal-close"><i class="fa fa-close modal-close-icon" onClick={() => toggleModal()}></i></div>
                             </div>
 
                             <form onSubmit={(event) => submitForm(event)}>
