@@ -18,7 +18,13 @@ class Home extends Component {
     }
 
     updateDeveloperData = () => {
-        fetch('/api/developers')
+        fetch('/api/developers', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
             .then(response => response.json())
             .then(data => {
                 this.setState({ developerData: data, filteredDeveloperData: data })
@@ -69,7 +75,7 @@ class Home extends Component {
                                 return (
                                     <div className="account-wrapper" key={data.id}>
                                         <Link to={'/developers/' + data.id}>
-                                            <img src={data.avatar_url} alt="account" id="account" height="100px" width="100px"/>
+                                            <img src={data.avatar_url} alt="account" id="account" height="100px" width="100px" />
                                             <div className="account-name">{data.login}</div>
                                             <i className='fa fa-external-link redirect'></i>
                                         </Link>

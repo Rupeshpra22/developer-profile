@@ -145,6 +145,7 @@ a{
     width: 100%;
     font-size: 36px;
     color:  #2F2E41;
+    text-align: center;
 }
 
 @media screen and (max-width: 960px){
