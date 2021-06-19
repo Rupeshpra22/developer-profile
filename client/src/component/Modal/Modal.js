@@ -37,7 +37,7 @@ export class Modal extends Component {
         const submitForm = (event) => {
             console.log(this.state.devProfileData)
             event.preventDefault();
-            if (this.state.devProfileData?.github_id != "" && this.state.devProfileData?.github_id != undefined) {
+            if (this.state.devProfileData?.github_id !== "" && this.state.devProfileData?.github_id !== undefined) {
                 fetch('/api/developers', {
                     method: "POST",
                     body: JSON.stringify(this.state.devProfileData),

@@ -15,27 +15,14 @@ class App extends React.Component {
   // }
 
   render() {
-    const changeBackground = () =>{
-        this.setState({isModalOpen: !this.state.isModalOpen})
+    const changeBackground = () => {
+      this.setState({ isModalOpen: !this.state.isModalOpen })
     }
     return (
-      // <div>
-      //   {
-      //     this.state.dev.map(data => {
-      //       return(
-      //         <li key={data.id}>
-      //         <ul>{data.name}</ul>
-      //       </li>
-      //       )            
-      //     })
-      //   }
-      // </div>
-     
-      
-        <div style={this.state.isModalOpen ? {backgroundColor: "grey"} : {backgroundColor: "transparent"}}>
-          <Route path="/" exact render={()=><Home changeBackground={()=>changeBackground()}/>} />
-          <Route path="/developers/:id" component={Developer} />
-        </div>
+      <div style={this.state.isModalOpen ? { backgroundColor: "grey" } : { backgroundColor: "transparent" }}>
+        <Route path="/" exact render={() => <Home changeBackground={() => changeBackground()} />} />
+        <Route path="/developers/:id" component={Developer} />
+      </div>
     )
   }
 }
