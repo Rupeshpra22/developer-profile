@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './component/Home/Home'
 import { Route } from 'react-router-dom'
 import Developer from './component/Developer/Developer'
-
+import './App.css'
 class App extends React.Component {
   state = {
     isModalOpen: false
@@ -15,14 +15,18 @@ class App extends React.Component {
   // }
 
   render() {
-    const changeBackground = () => {
-      this.setState({ isModalOpen: !this.state.isModalOpen })
-    }
+    // const changeBackground = () => {
+    //   this.setState({ isModalOpen: !this.state.isModalOpen })
+    // }
     return (
-      <div style={this.state.isModalOpen ? { backgroundColor: "grey" } : { backgroundColor: "transparent" }}>
-        <Route path="/" exact render={() => <Home changeBackground={() => changeBackground()} />} />
-        <Route path="/developers/:id" component={Developer} />
-      </div>
+      // <div style={this.state.isModalOpen ? { backgroundColor: "grey" } : { backgroundColor: "transparent" }} className="app-style">
+      //   <Route path="/" exact render={() => <Home changeBackground={() => changeBackground()} />} />
+      //   <Route path="/developers/:id" component={Developer} />
+      // </div>
+      <div className="app-style">
+      <Route path="/" exact component={Home} />
+      <Route path="/developers/:id" component={Developer} />
+    </div>
     )
   }
 }

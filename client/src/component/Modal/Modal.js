@@ -16,7 +16,7 @@ export class Modal extends Component {
         super(props);
         this.state = {
             devProfileData: {},
-            isModalClose: true,
+            isModalClose: false,
             error: false
         };
     }
@@ -37,6 +37,7 @@ export class Modal extends Component {
         const submitForm = (event) => {
             console.log(this.state.devProfileData)
             event.preventDefault();
+           
             if (this.state.devProfileData?.github_id !== "" && this.state.devProfileData?.github_id !== undefined) {
                 fetch('/api/developers', {
                     method: "POST",
@@ -48,30 +49,31 @@ export class Modal extends Component {
                 })
                     .then(data => {
                         this.setState({ isModalClose: false, error: false })
-                        window.location.reload();
+                        this.props.toggleModal();
+                        this.props.devDataUpdate();
                     });
-            }else{
-               this.setState({error: true})
+            } else {
+                this.setState({ error: true })
             }
         }
 
         console.log("Modal", this.state)
         const { isModalOpen, toggleModal } = this.props
-        // console.log(this.props)
         return (
             <>
                 {
-                    isModalOpen && this.state.isModalClose ?
+                    isModalOpen ?
                         <div className="modal">
                             <div className="modal-header">
                                 Add developer profile
                             </div>
-                            <hr width="90%" />
+
                             <form onSubmit={(event) => submitForm(event)}>
+                                <hr width="95%" />
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="github_id">Github<span style={{color: "red"}}>*</span></label>
-                                    <input type="text" id="github_id" style={{border : this.state.error && "1px solid red"}} onBlur={(e) => onInputBlur(e)} />
-                                    {this.state.error && <div style={{color: "red"}}>Please enter your valid Github Url</div>}
+                                    <label htmlFor="github_id">Github<span style={{ color: "red" }}>*</span></label>
+                                    <input type="text" id="github_id" style={{ border: this.state.error && "1px solid red" }} onBlur={(e) => onInputBlur(e)} />
+                                    {this.state.error && <div style={{ color: "red" }}>Please enter your valid Github Url</div>}
                                 </div>
                                 <div className="form-input-wrapper">
                                     <label htmlFor="linkedin_id">Linkedin</label>

@@ -81,6 +81,11 @@ section{
     padding: 5px;
 }
 
+.other-info span{
+    margin-left: 5px;
+    width: max-content;
+}
+
 .developer-info-nodata, .repo-nodata{
     display: flex;
     justify-content: center;

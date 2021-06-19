@@ -2,11 +2,13 @@
     width: 60%;
     position: absolute;
     z-index: 1;
-    top: 50%;
     left: 20%;
     text-align: center;
     border: 1px solid black;
-    background-color: white
+    height: 80vh;
+    background-color: white;
+    bottom: 3%;
+    overflow-y: auto;
 }
 
 .modal-header{
@@ -40,7 +42,11 @@ label{
     border: 1px solid black
 }
 
-.form-input-wrapper:nth-child(6){
+.form-input-wrapper:nth-child(2){
+    margin-top: 50px;
+}
+
+.form-input-wrapper:nth-child(7){
     margin-bottom: 50px;
 }
 

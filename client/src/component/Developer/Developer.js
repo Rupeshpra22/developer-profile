@@ -129,19 +129,19 @@ class Developer extends Component {
                                     {
                                         this.state.developerInfo[0].location &&
                                         <div className="other-info">
-                                            <img src={location} alt="location-icon" width="30px" height="30px" />{this.state.developerInfo[0].location}
+                                            <img src={location} alt="location-icon" width="30px" height="30px" /><span>{this.state.developerInfo[0].location}</span>
                                         </div>
                                     }
                                     {
                                         this.state.developerInfo[0].company &&
                                         <div className="other-info">
-                                            <img src={company} alt="company-icon" width="30px" height="30px" />{this.state.developerInfo[0].company}
+                                            <img src={company} alt="company-icon" width="30px" height="30px" /><span>{this.state.developerInfo[0].company}</span>
                                         </div>
                                     }
                                     {
                                         this.state.developerInfo[0].blog &&
                                         <div className="other-info">
-                                            <img src={blog} alt="blog-icon" width="30px" height="30px" />{this.state.developerInfo[0].blog}
+                                            <img src={blog} alt="blog-icon" width="30px" height="30px" /><span>{this.state.developerInfo[0].blog}</span>
                                         </div>
                                     }
 
