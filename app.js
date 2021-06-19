@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
 
@@ -25,6 +25,7 @@ app.use('/api/developers', developer);
 app.get("/", (req, res) => {
     res.send("Developer profile")
 })
-app.listen(port, () => {
-    console.log(`Server is listening at port ${port}`)
-})
+
+app.listen(process.env.PORT || 3000, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
