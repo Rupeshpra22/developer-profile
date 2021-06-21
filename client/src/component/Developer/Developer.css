@@ -188,7 +188,7 @@ section{
 }
 
 @media screen and (max-width: 500px){
-    .other-info-wrapper{
+    .social-media-links{
         justify-content: space-around;
     }
 }
