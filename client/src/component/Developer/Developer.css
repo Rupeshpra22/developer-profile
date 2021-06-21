@@ -186,3 +186,9 @@ section{
         margin: 0 30px
     }
 }
+
+@media screen and (max-width: 500px){
+    .other-info-wrapper{
+        justify-content: space-around;
+    }
+}
