@@ -159,29 +159,33 @@ class Developer extends Component {
                                 this.state.repos.map(repo => {
                                     return (
                                         <>
-                                        <div className="repo-wrapper" key={repo.id}>
-                                            <div className="repo-name-wrapper">
-                                                <a href={repo.html_url} target="_blank" rel="noreferrer">
-                                                <div className="repo-name">{repo.name}</div>
-                                                    <img src={redirect} alt="repo-redirect" width="20px" height="20px"  />
-                                                </a>
-                                                <div className="repo-date">Updated on {new Date(repo.updated_at).getDate() + " " + Month[new Date(repo.updated_at).getMonth()] + " " +  new Date(repo.updated_at).getFullYear()}</div>
+                                            <div className="repo-wrapper" key={repo.id}>
+                                                <div className="repo-name-wrapper">
+                                                    <a href={repo.html_url} target="_blank" rel="noreferrer">
+                                                        <div className="repo-name">{repo.name}</div>
+                                                        <img src={redirect} alt="repo-redirect" width="20px" height="20px" />
+                                                    </a>
+                                                    <div className="repo-date">Updated on {new Date(repo.updated_at).getDate() + " " + Month[new Date(repo.updated_at).getMonth()] + " " + new Date(repo.updated_at).getFullYear()}</div>
+                                                </div>
+                                                <div className="repo-description">{repo.description}</div>
+                                                <hr width="95%" />
                                             </div>
-                                            <div className="repo-description">{repo.description}</div>
-                                            <hr width="95%" />
-                                        </div>
-                                        
+
                                         </>
                                     )
                                 })
                             }
                         </main> :
-                        <div className="repo-nodata">
-                            Wait! Repos are loading
-                        </div>                        
+                        this.state.repos.length === 0 ?
+                            <div className="repo-nodata">
+                                {this.state.developerInfo[0]?.login} has zero repositories
+                            </div>
+                            : <div className="repo-nodata">
+                                Wait! Repos are loading
+                            </div>
                 }
-                <Footer/>
-                        
+                <Footer />
+
             </div>
         )
     }
