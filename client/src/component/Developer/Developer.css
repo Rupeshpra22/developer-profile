@@ -163,7 +163,7 @@ section{
 
 @media screen and (max-width: 1060px){
     section{
-        padding: 50px;
+        padding: 40px;
         flex-direction: column;
     }
 
