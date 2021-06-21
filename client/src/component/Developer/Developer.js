@@ -18,7 +18,8 @@ class Developer extends Component {
         super(props)
         this.state = {
             developerInfo: [],
-            repos: []
+            repos: [],
+            loading: true
         }
     }
 
@@ -33,7 +34,7 @@ class Developer extends Component {
             .then(repo => fetch(repo))
             .then(res => res.json())
             .then(data => {
-                this.setState({ repos: data })
+                this.setState({ repos: data, loading: false })
             })
     }
 
@@ -87,31 +88,31 @@ class Developer extends Component {
                                     }
                                     {
                                         this.state.developerInfo[0].hackerrank_id &&
-                                        <a href={"https://www.hackerrank.com/"+this.state.developerInfo[0].hackerrank_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.hackerrank.com/" + this.state.developerInfo[0].hackerrank_id} target="_blank" rel="noreferrer">
                                             <img src={hackerrank} alt="hackerrank-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].codechef_id &&
-                                        <a href={"https://www.codechef.com/users/"+this.state.developerInfo[0].codechef_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.codechef.com/users/" + this.state.developerInfo[0].codechef_id} target="_blank" rel="noreferrer">
                                             <img src={codechef} alt="codechef-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].linkedIn_url &&
-                                        <a href={"https://www.linkedin.com/in/"+this.state.developerInfo[0].linkedIn_url} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.linkedin.com/in/" + this.state.developerInfo[0].linkedIn_url} target="_blank" rel="noreferrer">
                                             <img src={linkedin} alt="linkedin-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].medium_id &&
-                                        <a href={"https://medium.com/"+this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://medium.com/" + this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
                                             <img src={medium} alt="medium-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].twitter_id &&
-                                        <a href={"https://twitter.com/"+this.state.developerInfo[0].twitter_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://twitter.com/" + this.state.developerInfo[0].twitter_id} target="_blank" rel="noreferrer">
                                             <img src={twitter} alt="twitter-icon" width="30px" height="30px" />
                                         </a>
                                     }
@@ -149,40 +150,42 @@ class Developer extends Component {
                         </section> :
                         <div className="developer-info-nodata">Hang in there your data is coming!</div>
                 }
-
                 {
-                    this.state.repos.length > 0 ?
-                        <main>
-                            <div className="main-header">Github Repositories</div>
-                            <hr width="85%" />
-                            {
-                                this.state.repos.map(repo => {
-                                    return (
-                                        <>
-                                            <div className="repo-wrapper" key={repo.id}>
-                                                <div className="repo-name-wrapper">
-                                                    <a href={repo.html_url} target="_blank" rel="noreferrer">
-                                                        <div className="repo-name">{repo.name}</div>
-                                                        <img src={redirect} alt="repo-redirect" width="20px" height="20px" />
-                                                    </a>
-                                                    <div className="repo-date">Updated on {new Date(repo.updated_at).getDate() + " " + Month[new Date(repo.updated_at).getMonth()] + " " + new Date(repo.updated_at).getFullYear()}</div>
-                                                </div>
-                                                <div className="repo-description">{repo.description}</div>
-                                                <hr width="95%" />
+                    this.state.repos?.length === 0 && this.state.loading === false && <div className="repo-nodata">
+                        {this.state.developerInfo[0]?.login} has zero repositories
+                    </div>
+                }
+                {
+                    this.state.repos.length > 0 &&
+                    <main>
+                        <div className="main-header">Github Repositories</div>
+                        <hr width="85%" />
+                        {
+                            this.state.repos.map(repo => {
+                                return (
+                                    <>
+                                        <div className="repo-wrapper" key={repo.id}>
+                                            <div className="repo-name-wrapper">
+                                                <a href={repo.html_url} target="_blank" rel="noreferrer">
+                                                    <div className="repo-name">{repo.name}</div>
+                                                    <img src={redirect} alt="repo-redirect" width="20px" height="20px" />
+                                                </a>
+                                                <div className="repo-date">Updated on {new Date(repo.updated_at).getDate() + " " + Month[new Date(repo.updated_at).getMonth()] + " " + new Date(repo.updated_at).getFullYear()}</div>
                                             </div>
+                                            <div className="repo-description">{repo.description}</div>
+                                            <hr width="95%" />
+                                        </div>
 
-                                        </>
-                                    )
-                                })
-                            }
-                        </main> :
-                        this.state.repos.length === 0 ?
-                            <div className="repo-nodata">
-                                {this.state.developerInfo[0]?.login} has zero repositories
-                            </div>
-                            : <div className="repo-nodata">
-                                Wait! Repos are loading
-                            </div>
+                                    </>
+                                )
+                            })
+                        }
+                    </main>
+                }
+                {this.state.loading === true &&
+                    <div className="repo-nodata">
+                        Wait! Repos are loading
+                        </div>
                 }
                 <Footer />
 
