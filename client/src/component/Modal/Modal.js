@@ -71,7 +71,7 @@ export class Modal extends Component {
                                         <label htmlFor="github_id">Github<span style={{ color: "red" }}>*</span></label>
                                     </div>
                                     <input type="text" id="github_id" style={{ border: this.state.error && "1px solid red" }} onBlur={(e) => onInputBlur(e)} />
-                                    {this.state.error && <div style={{ color: "red" }}>Please enter your valid Github Url</div>}
+                                    {this.state.error && <div style={{ color: "red" }}>Please enter your valid Github Id</div>}
 
                                 </div>
                                 <div className="form-input-wrapper">
