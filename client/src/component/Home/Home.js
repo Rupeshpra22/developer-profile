@@ -51,11 +51,12 @@ class Home extends Component {
 
         return (
             <>
+            {this.state.isModalOpen && <Overlay />}
                 <Modal
                     toggleModal={() => openModal()}
                     devDataUpdate={() => this.updateDeveloperData()}
                     isModalOpen={this.state.isModalOpen} />
-                {this.state.isModalOpen && <Overlay />}
+                
                 <div className="banner">
                     <div className="banner-text">The Developer Repository</div>
                     <img src={banner} alt="banner_image" id="banner" />
@@ -80,8 +81,10 @@ class Home extends Component {
                                     <div className="account-wrapper" key={data.id}>
                                         <Link to={'/developers/' + data.id}>
                                             <img src={data.avatar_url} alt="account" id="account" height="100px" width="100px" />
-                                            <div className="account-name">{data.login}</div>
-                                            <i className='fa fa-external-link redirect'></i>
+                                            <div className="account-name">{data.login}
+                                                <i className='fa fa-external-link redirect'></i>
+                                            </div>
+
                                         </Link>
                                     </div>
                                 )
