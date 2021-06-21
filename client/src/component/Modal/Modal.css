@@ -7,7 +7,7 @@
     border: 1px solid black;
     height: 500px;
     background-color: white;
-    bottom: 3%;
+    bottom: 4%;
     overflow-y: auto;
 }
 
@@ -96,7 +96,6 @@ label{
     .modal{
         width: 85%;
         left: 8%;
-        bottom: 1%;
     }
 
     .modal-header{
