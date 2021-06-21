@@ -3,7 +3,7 @@ import './Overlay.css'
 export class Overlay extends Component {
     render() {
         return (
-            <div class="overlay">
+            <div className="overlay">
             </div>
         )
     }

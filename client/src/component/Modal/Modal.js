@@ -54,7 +54,7 @@ export class Modal extends Component {
                         <div className="modal">
                             <div className="modal-header">
                                 <div className="modal-header-name">Add developer profile</div>
-                                <div class="modal-close"><i class="fa fa-close modal-close-icon" onClick={() => toggleModal()}></i></div>
+                                <div className="modal-close"><i className="fa fa-close modal-close-icon" onClick={() => toggleModal()}></i></div>
                             </div>
 
                             <form onSubmit={(event) => submitForm(event)}>

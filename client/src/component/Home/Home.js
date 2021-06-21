@@ -18,21 +18,25 @@ class Home extends Component {
     }
 
     updateDeveloperData = () => {
-        fetch('/api/developers', {
-            method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ developerData: data, filteredDeveloperData: data })
+        console.log("API CALL")
+        try {
+            fetch('/api/developers', {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                },
             })
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({ developerData: data, filteredDeveloperData: data })
+                })
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
     render() {
-        console.log(this.props)
         const handleChange = (event) => {
             let copiedData = [...this.state.developerData]
             let filteredDevs = copiedData.filter(dev => {
