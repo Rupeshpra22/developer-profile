@@ -18,7 +18,6 @@ class Home extends Component {
     }
 
     updateDeveloperData = () => {
-        console.log("API CALL")
         try {
             fetch('/api/developers', {
                 method: 'GET',
