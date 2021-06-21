@@ -44,6 +44,13 @@ form{
     padding: 12px;
 }
 
+.form-input{
+    display: flex;
+}
+
+.form-input img{
+    margin-right: 5px;
+}
 label{
     text-align: left;
 }

@@ -87,31 +87,31 @@ class Developer extends Component {
                                     }
                                     {
                                         this.state.developerInfo[0].hackerrank_id &&
-                                        <a href={this.state.developerInfo[0].hackerrank_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.hackerrank.com/"+this.state.developerInfo[0].hackerrank_id} target="_blank" rel="noreferrer">
                                             <img src={hackerrank} alt="hackerrank-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].codechef_id &&
-                                        <a href={this.state.developerInfo[0].codechef_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.codechef.com/users/"+this.state.developerInfo[0].codechef_id} target="_blank" rel="noreferrer">
                                             <img src={codechef} alt="codechef-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].linkedIn_url &&
-                                        <a href={this.state.developerInfo[0].linkedIn_url} target="_blank" rel="noreferrer">
+                                        <a href={"https://www.linkedin.com/in/"+this.state.developerInfo[0].linkedIn_url} target="_blank" rel="noreferrer">
                                             <img src={linkedin} alt="linkedin-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].medium_id &&
-                                        <a href={this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://medium.com/"+this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
                                             <img src={medium} alt="medium-icon" width="30px" height="30px" />
                                         </a>
                                     }
                                     {
                                         this.state.developerInfo[0].twitter_id &&
-                                        <a href={this.state.developerInfo[0].twitter_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://twitter.com/"+this.state.developerInfo[0].twitter_id} target="_blank" rel="noreferrer">
                                             <img src={twitter} alt="twitter-icon" width="30px" height="30px" />
                                         </a>
                                     }

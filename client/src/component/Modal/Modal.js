@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import './Modal.css'
+import codechef from '../../assets/codechef.png'
+import github from '../../assets/github.png'
+import hackerrank from '../../assets/hackerrank.png'
+import linkedin from '../../assets/linkedin.png'
+import medium from '../../assets/medium.png'
+import twitter from '../../assets/twitter.png'
 
 export class Modal extends Component {
     constructor(props) {
@@ -25,7 +31,7 @@ export class Modal extends Component {
 
         const submitForm = (event) => {
             event.preventDefault();
-           
+
             if (this.state.devProfileData?.github_id !== "" && this.state.devProfileData?.github_id !== undefined) {
                 fetch('/api/developers', {
                     method: "POST",
@@ -41,7 +47,7 @@ export class Modal extends Component {
                         this.props.devDataUpdate();
                     });
             } else {
-                document.querySelector(".modal").scrollTo(0,0)
+                document.querySelector(".modal").scrollTo(0, 0)
                 this.setState({ error: true })
             }
         }
@@ -60,28 +66,47 @@ export class Modal extends Component {
                             <form onSubmit={(event) => submitForm(event)}>
                                 <hr width="95%" />
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="github_id">Github<span style={{ color: "red" }}>*</span></label>
+                                    <div className="form-input">
+                                        <img src={github} alt="github-icon" width="20px" height="20px" />
+                                        <label htmlFor="github_id">Github<span style={{ color: "red" }}>*</span></label>
+                                    </div>
                                     <input type="text" id="github_id" style={{ border: this.state.error && "1px solid red" }} onBlur={(e) => onInputBlur(e)} />
                                     {this.state.error && <div style={{ color: "red" }}>Please enter your valid Github Url</div>}
+
                                 </div>
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="linkedin_id">Linkedin</label>
+                                    <div className="form-input">
+                                        <img src={linkedin} alt="linkedin-icon" width="20px" height="20px" />
+                                        <label htmlFor="linkedin_id">Linkedin</label>
+                                    </div>
                                     <input type="text" id="linkedin_id" onBlur={(e) => onInputBlur(e)} />
                                 </div>
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="codechef_id">Codechef</label>
+                                    <div className="form-input">
+                                        <img src={codechef} alt="codechef-icon" width="20px" height="20px" />
+                                        <label htmlFor="codechef_id">Codechef</label>
+                                    </div>
                                     <input type="text" id="codechef_id" onBlur={(e) => onInputBlur(e)} />
                                 </div>
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="hackerrank_id">Hackerrank</label>
+                                    <div className="form-input">
+                                        <img src={hackerrank} alt="hackerrank-icon" width="20px" height="20px" />
+                                        <label htmlFor="hackerrank_id">Hackerrank</label>
+                                    </div>
                                     <input type="text" id="hackerrank_id" onBlur={(e) => onInputBlur(e)} />
                                 </div>
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="twitter_id">Twitter</label>
+                                    <div className="form-input">
+                                        <img src={twitter} alt="twitter-icon" width="20px" height="20px" />
+                                        <label htmlFor="twitter_id">Twitter</label>
+                                    </div>
                                     <input type="text" id="twitter_id" onBlur={(e) => onInputBlur(e)} />
                                 </div>
                                 <div className="form-input-wrapper">
-                                    <label htmlFor="medium_id">Medium</label>
+                                    <div className="form-input">
+                                        <img src={medium} alt="medium-icon" width="20px" height="20px" />
+                                        <label htmlFor="medium_id">Medium</label>
+                                    </div>
                                     <input type="text" id="medium_id" onBlur={(e) => onInputBlur(e)} />
                                 </div>
 
