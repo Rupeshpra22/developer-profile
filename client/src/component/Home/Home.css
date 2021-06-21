@@ -67,11 +67,11 @@ input#search-dev{
 
 .dev-container{
     padding: 100px;
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 img#account{
