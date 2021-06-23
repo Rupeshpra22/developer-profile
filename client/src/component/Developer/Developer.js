@@ -106,7 +106,7 @@ class Developer extends Component {
                                     }
                                     {
                                         this.state.developerInfo[0].medium_id &&
-                                        <a href={"https://medium.com/" + this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
+                                        <a href={"https://medium.com/@" + this.state.developerInfo[0].medium_id} target="_blank" rel="noreferrer">
                                             <img src={medium} alt="medium-icon" width="30px" height="30px" />
                                         </a>
                                     }
