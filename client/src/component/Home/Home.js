@@ -78,7 +78,7 @@ class Home extends Component {
                             this.state.filteredDeveloperData.map(data => {
                                 return (
                                     <div className="account-wrapper" key={data.id}>
-                                        <Link to={'/api/developers/' + data.id}>
+                                        <Link to={'developers/' + data.id}>
                                             <img src={data.avatar_url} alt="account" id="account" height="100px" width="100px" />
                                             <div className="account-name">{data.login}
                                                 <i className='fa fa-external-link redirect'></i>
