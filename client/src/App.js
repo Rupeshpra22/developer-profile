@@ -8,24 +8,11 @@ class App extends React.Component {
     isModalOpen: false
   }
 
-  // componentDidMount() {
-  //   fetch('/api/developers')
-  //     .then(data => data.json())
-  //     .then(res => this.setState({ dev: res }))
-  // }
-
   render() {
-    // const changeBackground = () => {
-    //   this.setState({ isModalOpen: !this.state.isModalOpen })
-    // }
     return (
-      // <div style={this.state.isModalOpen ? { backgroundColor: "grey" } : { backgroundColor: "transparent" }} className="app-style">
-      //   <Route path="/" exact render={() => <Home changeBackground={() => changeBackground()} />} />
-      //   <Route path="/developers/:id" component={Developer} />
-      // </div>
       <div className="app-style">
       <Route path="/" exact component={Home} />
-      <Route path="/developers/:id" component={Developer} />
+      <Route path="/api/developers/:id" component={Developer} />
     </div>
     )
   }

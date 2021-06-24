@@ -25,7 +25,7 @@ class Developer extends Component {
 
 
     componentDidMount() {
-        fetch('/api' + this.props.location.pathname)
+        fetch(this.props.location.pathname)
             .then(response => response.json())
             .then(data => {
                 this.setState({ developerInfo: data })
